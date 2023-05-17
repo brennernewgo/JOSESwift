@@ -164,9 +164,9 @@ internal struct EC {
                 let errorCode = CFErrorGetCode(cfError)
 
                 #if canImport(LocalAuthentication)
-                if errorDomain == LAErrorDomain as CFErrorDomain {
-                    throw ECError.localAuthenticationFailed(errorCode: errorCode)
-                }
+//                if errorDomain == LAErrorDomain as CFErrorDomain {
+//                    throw ECError.localAuthenticationFailed(errorCode: errorCode)
+//                }
                 #endif
                 throw ECError.signingFailed(description: "Error creating signature. (CFError: \(cfError))")
             }
